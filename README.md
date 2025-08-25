@@ -16,7 +16,7 @@ astro dev start
 
 3. Buka Airflow UI: http://localhost:8080 (login default: admin / admin).
 
-### Konfigurasi Koneksi Airflow
+### B. Konfigurasi Koneksi Airflow
 Buat 2 Connections di Airflow (menu: Admin → Connections):
 * pg_src → menunjuk database source_db : Host, Port, Database (schema), User, Password sesuai server sumber.
 * pg_dwh → menunjuk database dwh : Host, Port, Database (schema), User, Password sesuai server tujuan.
@@ -51,7 +51,7 @@ PostgreSQL
 ```
 .
 ├─ dags/
-│  ├─ stage_csv_dims_to_pg_dwh_noprovider.py   # DAG 1: CSV → DWH (dimensi)
+│  ├─ stage_csv_dims_to_pg.py                  # DAG 1: CSV → DWH (dimensi)
 │  └─ dag_datapelangan.py                      # DAG 2: ETL harian sumber → DWH (agregat)
 ├─ data/                                       # CSV input untuk DAG 1
 │  ├─ dummy_routes.csv
